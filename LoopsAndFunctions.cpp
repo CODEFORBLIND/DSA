@@ -13,8 +13,9 @@ int main(){
     for (int i = 0; i<n; i++) {
         cin >> arr[i];
     }
-    doSomething(arr, n);
     cout << "Value inside int main : " << arr[0] <<endl;
+    doSomething(arr, n);
+    cout << "Value after executing the doSomething function : " << arr[0] << endl;
     return 0;
 }
 
