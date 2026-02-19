@@ -23,23 +23,45 @@ void bubbleSort(int arr[], int n){
             }
         }
     }
-    
 }
+
+// optimized version
+void bubblesortOptimized(int arr1[], int n){
+    int swapDone = 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i+1; j < n; j++)
+        {
+            if(arr1[i] > arr1[j]){
+                swap(arr1[i], arr1[j]);
+                swapDone++;
+            }
+        }
+        if(swapDone == 0){
+            break;
+        }
+    }
+    cout << "Number of swaps done :" << swapDone << endl;
+}
+
 
 int main(){
     int n;
     cin >> n;
-    int arr[n];
+    // int arr[n];
+    int arr1[n];
+    cout << "Enter the elements of the array: ";
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        cin >> arr1[i];
     }
 
-    bubbleSort(arr, n);
+    // bubbleSort(arr, n);
+    bubblesortOptimized(arr1, n);
 
     cout << "Sorted array: ";
     for(int i = 0; i<n; i++){
-        cout << arr[i] << " ";
+        cout << arr1[i] << " ";
     }
     
     return 0;
