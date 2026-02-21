@@ -1,11 +1,10 @@
-// Delete Last Node of Linked List
+// Find the Length of a Linked List
 
-// Problem Statement: Given a Linked List, delete the tail of the list and print the updated list.
+// Problem Statement: Given the head of a linked list, print the length of the linked list.
 
-// Input: 0->1->2
-// Output: 0->1
-
-
+// Input: 0->1->2 
+// Output: 3
+// Explanation: The list has a total of 3 nodes, thus the length of the list is 3.
 
 #include<bits/stdc++.h>
 using namespace std;
