@@ -1,4 +1,4 @@
-// Delete Last Node of a Doubly Linked List
+// Delete Last Node and first Node of a Doubly Linked List
 
 // Problem Statement: Given a Doubly Linked List, delete the last node of the Doubly Linked List.
 

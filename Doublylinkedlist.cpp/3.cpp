@@ -73,7 +73,12 @@ public:
     }
 
     void reverse(){
-        
+        Node* temp = head;
+        while(temp->next == nullptr){
+        temp->prev = temp->next;
+        }
+        head->next = nullptr;
+        tail->prev = nullptr;
     }
 
 
@@ -97,7 +102,8 @@ int main(){
     db.append(20);
     db.append(30);
     db.printLinkedList();
-    db.listSize();
+    db.reverse();
+    // db.listSize();
     db.printLinkedList();
 
 return 0;
