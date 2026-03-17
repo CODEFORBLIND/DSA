@@ -73,12 +73,18 @@ public:
     }
 
     void reverse(){
+        Node* prev = nullptr;
+        Node* curr = head;
         Node* temp = head;
-        while(temp->next == nullptr){
-        temp->prev = temp->next;
+        while(curr){
+            Node* next = curr->next;
+            curr->next = prev;
+            curr->prev = next;
+            prev = curr;
+            curr = next;
         }
-        head->next = nullptr;
-        tail->prev = nullptr;
+        head = tail;
+        tail = temp;
     }
 
 
