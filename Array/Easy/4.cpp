@@ -18,21 +18,32 @@ class ArrayRD{
     public :
     void removeduplicates(int *arr, int n){
         int arr1[n];
-        for (int i = 0; i < n; i++)
+        arr1[0] = arr[0];
+        int uniqueCount = 1;
+        for (int i = 1; i < n; i++)
         {
-            for (int j = 0; j <= i; j++)
+            bool isDuplicate = false;
+            for (int j = 0; j < i; j++)
             {
                 if(arr[i] == arr1[j]){
-                    continue;
-                } else if(arr[i] > arr1[j]){
-                    arr1[j] = arr[i];
+                    isDuplicate = true; // We found it, it's a duplicate!
+                    break;              // Stop looking
                 }
             }
+            if(!isDuplicate){
+                arr1[uniqueCount] = arr[i];
+                uniqueCount++;
+            }
+
         }
         for (int i = 0; i < n; i++)
         {
-            cout << arr1[i] << " ";
-        }
+            if(i < uniqueCount){
+                cout << arr1[i] << " ";
+            } else{
+                cout << " _ " ;
+            }
+        }   
         cout << endl;
     }
 };
