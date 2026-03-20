@@ -12,6 +12,7 @@
 // Explanation :rotate 1 step to the left: [2, 3, 4, 5, 6, 1]
 // rotate 2 steps to the left: [3, 4, 5, 6, 1, 2]
 
+
 // Another method to reverse the array
 
 #include<bits/stdc++.h>
