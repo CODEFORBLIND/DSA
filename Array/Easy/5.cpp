@@ -14,6 +14,15 @@
 // Rotating once to the left results in nums = [2, 3, 4, 5, 1].
 
 
+// Example 2:
+// Input:
+//  nums = [1, 2, 3, 4, 5]  
+// Output:
+//  [5, 1, 2, 3, 4]  
+// Explanation:
+//  Initially, nums = [1, 2, 3, 4, 5]  
+// Rotating once to the left results in nums = [5, 1, 2, 3, 4] .
+
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -23,7 +32,6 @@ class arrayrl{
     public:
     void rotateleft(int *arr, int n){
         // Shift the first element to last
-        int sf = arr[0];
         int dummyarr[n];
         int j = 0;
         for (int i = 1; i < n; i++)
@@ -37,12 +45,31 @@ class arrayrl{
             cout << dummyarr[i];
         }
     }
+
+    void rotateright(int *arr, int n){
+        // Shift the last elem to first position
+        int dummyarr[n];
+        int j = n-1; // 4
+        int k = 1;
+        dummyarr[0] = arr[n-1];
+        for (int i = 0; i < n-1; i++) // 1, 2, 3
+        {
+            dummyarr[k] = arr[i];
+            k++;
+            
+        }
+        for (int i = 0; i < n; i++)
+        {
+            cout << dummyarr[i] << " ";
+        }
+    }
 };
 
 int main(){
     arrayrl rl;
     int arr[] = {1,2,3,4,5};
     int n = sizeof(arr)/sizeof(arr[0]);
-    rl.rotateleft(arr,n);
+    // rl.rotateleft(arr,n);
+    rl.rotateright(arr,n);
 return 0;
 }
