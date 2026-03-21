@@ -34,6 +34,20 @@ class endArray{
                 cout << "0" << " ";
             }
         }
+        cout << endl;
+        for (int i = 0; i < n; i++)
+        {
+            if(i < j){
+                arr[i] = dummyArr[i];
+            }
+            else {
+                arr[i] = 0;
+            }
+        }
+    }
+    void zerosInBeg(int *arr, int n){
+        // Shift all the zeroes in the beginning
+        
     }
 };
 
@@ -47,6 +61,10 @@ int main(){
     cout << endl;
     endArray ea;
     ea.zeroesToEnd(arr,n);
-    
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " " ;
+    }
+    cout << endl;
 return 0;
 }
