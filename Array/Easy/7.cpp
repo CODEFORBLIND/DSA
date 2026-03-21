@@ -14,6 +14,7 @@ using namespace std;
 
 class endArray{
     public:
+    int counter = 0;
     void zeroesToEnd(int *arr, int n){
         int dummyArr[n];
         int j = 0;
@@ -26,12 +27,14 @@ class endArray{
                 j++;
             }
         }
+        
         for (int i = 0; i < n; i++)
         {
             if(i < j){
                 cout << dummyArr[i] << " ";
             } else { 
                 cout << "0" << " ";
+                counter++;
             }
         }
         cout << endl;
@@ -47,24 +50,49 @@ class endArray{
     }
     void zerosInBeg(int *arr, int n){
         // Shift all the zeroes in the beginning
-        
+        int dummyarr[n];
+        while (counter > 0)
+            {
+                int m = 1;
+                dummyarr[0] = arr[n-1];
+                for (int i = 0; i < n-1; i++) 
+                {
+                    dummyarr[m] = arr[i];
+                    m++;
+                    
+                }
+
+                for (int i = 0; i < n; i++)
+                {
+                    cout << dummyarr[i] << " ";
+                    arr[i] = dummyarr[i];
+                }
+                counter--;
+                cout << endl;
+            }
     }
 };
 
 int main(){
     int arr[] = {1, 0, 3, 0, 0, 6};
     int n = sizeof(arr)/sizeof(arr[0]);
+    cout << "Original Array" << endl;
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " " ;
     }
     cout << endl;
+    cout << "Shifting the zeroes in the end" << endl;
     endArray ea;
     ea.zeroesToEnd(arr,n);
+    
+    cout << "Modified Array : " << endl;
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " " ;
     }
     cout << endl;
+    cout << "Shifting the zeroes in the beginning" << endl;
+    ea.zerosInBeg(arr,n);
 return 0;
 }

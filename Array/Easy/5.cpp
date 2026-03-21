@@ -49,10 +49,9 @@ class arrayrl{
     void rotateright(int *arr, int n){
         // Shift the last elem to first position
         int dummyarr[n];
-        int j = n-1; // 4
         int k = 1;
         dummyarr[0] = arr[n-1];
-        for (int i = 0; i < n-1; i++) // 1, 2, 3
+        for (int i = 0; i < n-1; i++) 
         {
             dummyarr[k] = arr[i];
             k++;

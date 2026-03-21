@@ -31,7 +31,7 @@ class rotateArray{
             {
                 int m = 1;
                 dummyarr[0] = arr[n-1];
-                for (int i = 0; i < n-1; i++) // 1, 2, 3
+                for (int i = 0; i < n-1; i++) 
                 {
                     dummyarr[m] = arr[i];
                     m++;
