@@ -14,9 +14,22 @@
 // Result: 4
 // Explanation: In this array, only element 4 appear once and the other elements appear twice. So, 4 is the answer.
 
+
+
 #include<bits/stdc++.h>
 using namespace std;
+class findsingle{
+    public:
+    void appearOnce(int *arr, int n){
+        map<int, array<int,5>> numbers;
+        numbers.insert({2,{4,1,2,1,2}});
+        
+    }
+};
 int main(){
-    
+    int arr[] = {4,1,2,1,2} ;
+    int n = sizeof(arr)/sizeof(arr[0]);
+    findsingle fs;
+    fs.appearOnce(arr, n);
 return 0;
 }
