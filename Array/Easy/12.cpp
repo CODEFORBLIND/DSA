@@ -15,23 +15,44 @@
 // Explanation: In this array, only element 4 appear once and the other elements appear twice. So, 4 is the answer.
 
 
+// 4 1 2 1 2
+// After Sorting : 1 1 2 2 4
+// Method 1
 
+// #include<bits/stdc++.h>
+// using namespace std;
+// class findsingle{
+//     public:
+//     void appearOnce(int *arr, int n){
+//         map<int, int> numbers;
+//         for (int i = 0; i < n; i++)
+//         {
+//             numbers[arr[i]]++;
+//         }
+//         for (auto const& [num, freq] : numbers) {
+//             if (freq == 1) {
+//             cout << "Number that appears once in the array is: " << num << endl;; 
+//             }
+//         }
+        
+        
+//     }
+// };
+// int main(){
+//     // int arr[] = {4,1,2,1,2} ;
+//     int arr[] = {2,2,1};
+//     int n = sizeof(arr)/sizeof(arr[0]);
+//     findsingle fs;
+//     fs.appearOnce(arr, n);
+// return 0;
+// }
+
+// Method 2 : Using XOR Logic as the other numbers are appearing twice only 
 #include<bits/stdc++.h>
 using namespace std;
 class findsingle{
     public:
     void appearOnce(int *arr, int n){
-        map<int, int> numbers;
-        for (int i = 0; i < n; i++)
-        {
-            numbers[arr[i]]++;
-        }
-        for (auto const& [num, freq] : numbers) {
-            if (freq == 1) {
-            cout << "Number that appears once in the array is: " << num << endl;; 
-            }
-        }
-        
         
     }
 };
