@@ -22,7 +22,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 void longestSubArray(int *arr, int sum, int n){
-
+    int subArr = 0;
+    int maxSubArr = 0;
+    for (int i = 0; i < n; i++)
+    {
+        int sum = 0;
+        sum += arr[i];
+        if(sum == 15){
+            subArr = i+1;
+            maxSubArr = max(subArr, maxSubArr);
+        }
+        
+    }
+    
 }
 int main(){
     int arr[] = {10, 5, 2, 7, 1, 9};
