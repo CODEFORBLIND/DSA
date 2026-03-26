@@ -31,7 +31,7 @@
 //         }
 //         for (auto const& [num, freq] : numbers) {
 //             if (freq == 1) {
-//             cout << "Number that appears once in the array is: " << num << endl;; 
+//             cout << "Number that appears once in the array is: " << num << endl; 
 //             }
 //         }
         
@@ -53,12 +53,17 @@ using namespace std;
 class findsingle{
     public:
     void appearOnce(int *arr, int n){
-        
+        int result = 0;
+        for (int i = 0; i < n; i++)
+        {
+            result = result ^ arr[i];
+        }
+        cout << "Number that appears once in the array is: " << result << endl;
     }
 };
 int main(){
-    // int arr[] = {4,1,2,1,2} ;
-    int arr[] = {2,2,1};
+    // int arr[] = {4,1,2,2,3,5,3,5,4};
+    int arr[] = {2,2,4};
     int n = sizeof(arr)/sizeof(arr[0]);
     findsingle fs;
     fs.appearOnce(arr, n);
