@@ -22,9 +22,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 void longestSubArray(int *arr, int sum, int n){
-    
+
 }
 int main(){
-    
+    int arr[] = {10, 5, 2, 7, 1, 9};
+    int sum = 15;
+    int n = sizeof(arr)/ sizeof(arr[0]);
+
 return 0;
 }
