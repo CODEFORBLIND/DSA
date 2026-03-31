@@ -31,10 +31,10 @@ void longestSubArray(int *arr, int sum, int n){
         if(sum == 15){
             subArr = i+1;
             maxSubArr = max(subArr, maxSubArr);
+            sum = 0;
         }
-        
     }
-    
+    cout << "The length of the sub Array is : " << maxSubArr << endl;
 }
 int main(){
     int arr[] = {10, 5, 2, 7, 1, 9};
