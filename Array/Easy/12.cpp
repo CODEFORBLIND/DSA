@@ -61,6 +61,7 @@ class findsingle{
         cout << "Number that appears once in the array is: " << result << endl;
     }
 };
+
 int main(){
     // int arr[] = {4,1,2,2,3,5,3,5,4};
     int arr[] = {2,2,4};
