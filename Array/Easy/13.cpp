@@ -21,6 +21,7 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+
 void longestSubArray(int *arr, int sum, int n){
     int subArr = 0;
     int maxSubArr = 0;
@@ -36,6 +37,7 @@ void longestSubArray(int *arr, int sum, int n){
     }
     cout << "The length of the sub Array is : " << maxSubArr << endl;
 }
+
 int main(){
     int arr[] = {10, 5, 2, 7, 1, 9};
     int sum = 15;
