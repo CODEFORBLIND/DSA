@@ -19,30 +19,29 @@
 // Explanation:
 //  There is no sub-array in the array that sums to 6. Therefore, the output is 0.
 
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-void longestSubArray(int *arr, int sum, int n){
-    int subArr = 0;
-    int maxSubArr = 0;
-    for (int i = 0; i < n; i++)
-    {
-        int sum = 0;
-        sum += arr[i];
-        if(sum == 15){
-            subArr = i+1;
-            maxSubArr = max(subArr, maxSubArr);
-            sum = 0;
+int longestsubarray(int arr[], int n, int k){
+    int maxlen = 0;
+    for (int i = 0; i < n; i++){
+        for (int j = i; j < n; j++){
+            int sum = 0;
+            for (int k = i ; k<= j; k++){
+                sum +=arr[k];
+            }
+            if (sum == k){
+                maxlen = max(maxlen, j-i+1);
+            }
         }
     }
-    cout << "The length of the sub Array is : " << maxSubArr << endl;
+    return maxlen;
 }
 
-int main(){
+int main() {
     int arr[] = {10, 5, 2, 7, 1, 9};
-    int sum = 15;
-    int n = sizeof(arr)/ sizeof(arr[0]);
-    longestSubArray(arr, sum, n);
-
-return 0;
+    int size = sizeof(arr)/sizeof(int);
+    int k = 15;
+    cout<< longestsubarray(arr,size,k);
+    return 0;
 }
