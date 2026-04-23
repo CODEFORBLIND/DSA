@@ -6,9 +6,6 @@
 // Output: True
 // Explanation: Since element 2 is present in the list, return true.
 
-
-
-
 #include<bits/stdc++.h>
 using namespace std;
 
