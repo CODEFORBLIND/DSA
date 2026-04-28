@@ -96,7 +96,6 @@ public:
     }
 };
 
-
 int main(){
     linkedList list;
     cout << "Original List " << endl;
