@@ -42,7 +42,7 @@ int longestsubarray(int arr[], int n, int k){
 int main() {
     int arr[] = {10, 5, 2, 7, 1, 9};
     int size = sizeof(arr)/sizeof(int);
-    int k = 15;
+    int k = 10;
     cout<< longestsubarray(arr,size,k);
     return 0;
 }
