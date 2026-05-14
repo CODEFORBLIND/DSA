@@ -16,7 +16,29 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+
+int longestsubarray(int arr[], int n, int k){
+    int max_len = 0;
+
+    for (int i = 0; i < n; i++) {
+        int current_sum = 0;
+        
+        for (int j = i; j < n; j++) {
+            current_sum += arr[j];
+            
+            if (current_sum == k) {
+                max_len = max(max_len, j - i + 1);
+            }
+        }
+    }
+
+    return max_len;
+}   
+
 int main(){
-    
+    int arr[] = {9, -3, 3, -1, 6, -5};
+    int size = sizeof(arr)/sizeof(int);
+    int k = 0;
+    cout<< longestsubarray(arr,size,k);
 return 0;
 }

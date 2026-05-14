@@ -24,20 +24,22 @@
 using namespace std;
 
 // Brute force
-// int longestsubarray(int arr[], int n, int k){
-//     int maxlen = 0;
-//     for (int i = 0; i < n; i++){
-//         for (int j = i; j < n; j++){
-//             int sum = 0;
-//             for (int k = i ; k<= j; k++){
-//                 sum +=arr[k];
-//             }
-//             if (sum == k){
-//                 maxlen = max(maxlen, j-i+1);
+// int longestsubarray(int a[],int n, int k) {
+//     int max_len = 0;
+
+//     for (int i = 0; i < n; i++) {
+//         int current_sum = 0;
+        
+//         for (int j = i; j < n; j++) {
+//             current_sum += a[j];
+            
+//             if (current_sum == k) {
+//                 max_len = max(max_len, j - i + 1);
 //             }
 //         }
 //     }
-//     return maxlen;
+
+//     return max_len;
 // }
 
 // Monotonic Sliding Window
@@ -64,8 +66,6 @@ int longestsubarray(int arr[], int n, int k){
 
     return len;
 }   
-
-
 
 int main() {
     int arr[] = {10, 5, 2, 7, 1, 9};
