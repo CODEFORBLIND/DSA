@@ -23,26 +23,54 @@
 #include <iostream>
 using namespace std;
 
+// Brute force
+// int longestsubarray(int arr[], int n, int k){
+//     int maxlen = 0;
+//     for (int i = 0; i < n; i++){
+//         for (int j = i; j < n; j++){
+//             int sum = 0;
+//             for (int k = i ; k<= j; k++){
+//                 sum +=arr[k];
+//             }
+//             if (sum == k){
+//                 maxlen = max(maxlen, j-i+1);
+//             }
+//         }
+//     }
+//     return maxlen;
+// }
+
+// Monotonic Sliding Window
 int longestsubarray(int arr[], int n, int k){
-    int maxlen = 0;
-    for (int i = 0; i < n; i++){
-        for (int j = i; j < n; j++){
-            int sum = 0;
-            for (int k = i ; k<= j; k++){
-                sum +=arr[k];
-            }
-            if (sum == k){
-                maxlen = max(maxlen, j-i+1);
-            }
+    int l = 0;
+    int r = 0;
+
+    int curr_sum = 0;
+    int len = 0;
+
+    while(r < n){
+        curr_sum += arr[r];
+
+        while(l <= r && curr_sum > k){
+            curr_sum -= arr[l];
+            l++;
         }
+
+        if(curr_sum == k){
+            len = max(len, r - l + 1);
+        }
+        r++;
     }
-    return maxlen;
-}
+
+    return len;
+}   
+
+
 
 int main() {
     int arr[] = {10, 5, 2, 7, 1, 9};
     int size = sizeof(arr)/sizeof(int);
-    int k = 10;
+    int k = 15;
     cout<< longestsubarray(arr,size,k);
     return 0;
 }
