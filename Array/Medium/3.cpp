@@ -26,10 +26,12 @@ void majorityElem(int arr[], int n){
         if(votes == 0){
             candid = arr[i];
             votes = 1;
-        } else if(arr[i] == candid){
-            votes++;
         } else {
-            votes--;
+            if(arr[i] == candid){
+                votes++;
+            } else {
+                votes--;
+            }
         }
     }
 
