@@ -16,9 +16,25 @@ void rotateArray(vector<vector<int>> &matrix){
     int rows = matrix.size();
     int cols = matrix[0].size();
 
-    vector<vector<int>> temp;
+
+    cout << "Matrix before clockwise rotation" << endl;
     for (int i = 0; i < rows; i++)
     {
+        for (int j = 0; j < cols; j++)
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+    
+
+    vector<vector<int>> temp;
+    temp.resize(rows);
+
+    for (int i = 0; i < rows; i++)
+    {
+        temp[i].resize(cols);
         for (int j = 0; j < cols; j++)
         {
             temp[i][j] = 0;
@@ -42,14 +58,84 @@ void rotateArray(vector<vector<int>> &matrix){
     // temp[2][1].push_back(matrix[1][2]);
     // temp[2][2].push_back(matrix[2][2]);
 
-    
-
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            temp[j][i] = matrix[i][j];
+        }
+    }
 
     // Now we will reverse each block
+
+    for (int i = 0; i < rows; i++)
+    {
+        reverse(temp[i].begin(), temp[i].end());
+    }
+
+    matrix = temp;
+    
+    cout << "Matrix after clockwise rotation" << endl;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+    
+}
+
+void rotationwithoutTempArray(vector<vector<int>> matrix){
+    int rows = matrix.size();
+    int cols = matrix[0].size();
+
+
+    cout << "Matrix before clockwise rotation" << endl;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+    
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = i+1; j < cols; j++)
+        {
+            swap(matrix[j][i],matrix[i][j]);
+        }
+    }
+
+    // Now we will reverse each block
+
+    for (int i = 0; i < rows; i++)
+    {
+        reverse(matrix[i].begin(), matrix[i].end());
+    }
+
+    cout << "Matrix after clockwise rotation" << endl;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+    
+
 }
 
 int main(){
     vector<vector<int>> matrix = {{1,2,3}, {4,5,6}, {7,8,9}};
-    rotateArray(matrix);
+    // rotateArray(matrix);
+    rotationwithoutTempArray(matrix);
 return 0;
 }
