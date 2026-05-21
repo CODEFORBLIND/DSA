@@ -14,7 +14,23 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+
+void findOccurences(int arr[], int n, int target){
+    int counter = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if(arr[i] == target){
+            counter++;
+        }
+    }
+    cout << "No of occurences are: " << counter << endl;
+
+}
+
 int main(){
-    
+    int arr[] = {2 , 2 , 3 , 3 , 3 , 3 , 4};
+    int n = sizeof(arr)/sizeof(int);
+    int target = 2;
+    findOccurences(arr, n, target);
 return 0;
 }

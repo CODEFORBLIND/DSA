@@ -79,8 +79,8 @@ int main(){
         cout << arr[i] << " " ;
     }
     cout << endl;
-    int k = 6; //counter that tells how many elements to shift to left or right
-    string shift = "right";
+    int k = 2; //counter that tells how many elements to shift to left or right
+    string shift = "left";
     rt.rotate(arr, n, k, shift);
 return 0;
 }
