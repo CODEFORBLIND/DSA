@@ -1,18 +1,17 @@
-// Minimum in Rotated Sorted Array
+// Find out how many times the array has been rotated
 
+// Problem Statement: Given an integer array arr of size N, sorted in ascending order (with distinct values). Now the array is rotated between 1 to N times which is unknown. Find how many times the array has been rotated.
 
-// Problem Statement:
-// Given an integer array arr of size N, sorted in ascending order (with distinct values), the array is rotated at any index which is unknown. Find the minimum element in the array.
-
-// Pre-requisites: Search in Rotated Sorted Array I,  Search in Rotated Sorted Array II & Binary Search algorithm
+// Pre-requisites: Find minimum in Rotated Sorted Array,  Search in Rotated Sorted Array II & Binary Search algorithm
 
 // Examples
-// Input: arr = [4,5,6,7,0,1,2,3]
-// Output: 0
-// Explanation: The minimum element in the array is 0.
+// Input : arr = [4,5,6,7,0,1,2,3]
+// Result: 4
+// Explanation: The original array should be [0,1,2,3,4,5,6,7]. So, we can notice that the array has been rotated 4 times.
+
 // Input : arr = [3,4,5,1,2]
-// Output: 1
-// Explanation : The minimum element in the array is 1.\
+// Output : 3
+// Explanation: The original array should be [1,2,3,4,5]. So, we can notice that the array has been rotated 3 times.
 
 
 #include<bits/stdc++.h>
@@ -54,7 +53,7 @@ void findMin(int arr[], int n, int left_rotate){
             e = mid;
         }
     }
-    cout << "Minimum is " << arr[s] << " present at index: " << s << endl;
+    cout <<"No of rotations: " << (n - s) << endl;
 }
 
 int main(){
