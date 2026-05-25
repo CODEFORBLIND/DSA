@@ -14,11 +14,29 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void findSqrt(int arr[], int n){
-    
+void findSqrt(int n){
+    if (n < 2) {
+        return n;
+    }
+    int s = 1;
+    int l = n/2;
+    int candid = 0;
+
+    while (s <= l)
+    {
+        int mid = (s+l)/2;
+        if((mid * mid) <= n){
+            candid = mid;
+            s = mid + 1;
+        } else {
+            l = mid - 1;
+        }
+    }
+    cout << "Square root is: " << candid << endl;  
 }
 
 int main(){
-    
+    int n = 36;
+    findSqrt(n);
 return 0;
 }
