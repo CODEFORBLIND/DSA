@@ -15,6 +15,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+void eatbana(){
+    
+}
+
 int main(){
     
 return 0;
