@@ -39,8 +39,29 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+
+void removeOuterParentheses(string s){
+    string res = "";
+    int count = 0;
+    for(char ch : s){
+        if(ch == '('){
+            if(count > 0){
+                res+= ch;
+            }
+            count++;
+        }
+        if(ch == ')'){
+            count--;
+            if(count > 0){
+                res+= ch;
+            }
+        }
+    }
+    cout << res << endl;
+}
+
 int main(){
-    
-    
+    string s = "(()())(())()";
+    removeOuterParentheses(s);
 return 0;
 }
