@@ -9,7 +9,61 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+
+void revWordsInString(string s){
+    string test = "";
+    vector<string> testarr;
+    int count = 0;
+    for(char ch : s){
+        if(ch == ' '){
+            if(test != "")
+            testarr.push_back(test);
+            count++;
+            test = "";
+        } else {
+            test += ch;
+        }
+    }
+
+    if(test != ""){
+        testarr.push_back(test);
+    }
+
+
+    for (int i = testarr.size() - 1; i >= 0; i--)
+    {
+        cout << testarr[i] << " ";
+    }
+    cout << endl;
+}
+
 int main(){
-    
+    string s = "welcome to the jungle";
+    revWordsInString(s);
 return 0;
 }
+
+// Method 2
+// #include <iostream>
+// #include <string>
+// #include <sstream>
+
+// using namespace std;
+
+// string revWordsInStringPro(string s) {
+//     stringstream ss(s);
+//     string word;
+//     string result = "";
+
+    // ss >> word automatically extracts characters until it hits a space
+//     while (ss >> word) {
+//         if (result == "") {
+//             result = word;
+//         } else {
+            // Prepend the new word to the front of the result string
+//             result = word + " " + result;
+//         }
+//     }
+
+//     return result;
+// }
