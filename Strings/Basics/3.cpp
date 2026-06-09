@@ -11,3 +11,10 @@
 //  "5347"
 // Explanation:
 //  The odd numbers formed by the given string are → 5, 3, 53, 347, 5347. The largest odd number without leading zeroes is 5347.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    
+return 0;
+}
