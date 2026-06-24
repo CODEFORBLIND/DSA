@@ -29,7 +29,7 @@ string largestOdd(string s){
         i++;
     }
     
-    return s.substr(i, index - i + 1);
+    return s.substr(i, index - i + 1); // 0 to 3-0+1 -> index 0 to length of 4
 }
 
 int main(){
