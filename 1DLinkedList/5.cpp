@@ -67,17 +67,31 @@ public:
         }
     }
 
-    void searchelem(int val){
-        Node* temp = head;
+    // void searchelem(int val){
+    //     Node* temp = head;
+    //     while(temp != nullptr){
+    //         if(temp->data == val){
+    //             cout << "Present";
+    //             return;
+    //         } else{
+    //             temp = temp->next;  
+    //         }
+    //     }
+    //     cout << "Not present";
+    // }
+
+
+    void searchElem(int val){
+        Node *temp = head;
         while(temp != nullptr){
-            if(temp->data == val){
-                cout << "Present";
+            if(temp-> data == val){
+                cout << "Element found"<< endl;
                 return;
-            } else{
-                temp = temp->next;  
+            } else {
+                temp = temp->next;
             }
         }
-        cout << "Not present";
+        cout << "Not present" << endl;
     }
 
 
@@ -104,7 +118,7 @@ int main(){
     list.append(30);
     list.printLinkedList();
     list.listSize();
-    list.searchelem(10);
+    list.searchElem(10);
 
 
 return 0;
