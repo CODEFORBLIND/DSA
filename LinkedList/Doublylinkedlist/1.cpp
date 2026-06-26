@@ -75,12 +75,12 @@ public:
     }
 
     void prepend(int val){
-        Node* temp = new Node(val);
+        Node *temp = new Node(val);
         if(!head){
             head = tail = temp;
-        }else{
-            temp->next = head;
+        } else {
             head->prev = temp;
+            temp->next = head;
             head = temp;
         }
     }

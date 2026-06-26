@@ -3,90 +3,86 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class doublyLinkedList{
-private:
-    class Node{
-        public:
-            int data;
-            Node* next;
-            Node* prev;
+class DoublyLL{
+    private:
+        class Node{
+            public:
+            int val;
+            Node *prev;
+            Node *next;
 
-            Node(int val, Node* next1, Node* prev1){
-                data = val;
-                next = next1;
-                prev = prev1;
-            }
-            Node(int val){
-                data = val;
+            Node(int value){
+                val = value;
                 next = prev = nullptr;
             }
-    };
 
-    Node* head;
-    Node* tail;
+            Node(int value, Node *prev1, Node* next1){
+                val = value;
+                prev = prev1;
+                next = next1;
+            }
+        };
 
-public: 
-    // Constructor
-    doublyLinkedList() {
-        head = nullptr;
-        tail = nullptr;
-    }
+        Node *head;
+        Node *tail;
 
-    // Destructor to free memory
-    ~doublyLinkedList() {
-    Node* current = head;
-    while (current != nullptr) {
-        Node* nextNode = current->next; // Save the next node before deleting current
-        delete current;                // Free the memory
-        current = nextNode;            // Move to the next node
-    }
-    head = tail = nullptr; 
-}
+    public:
 
-    void listSize(){
-        int count = 0;
-        Node* temp = head;
-        while (temp != nullptr)
-        {
-            count++;
-            temp = temp->next;
+        DoublyLL(){
+            head = tail = nullptr;
         }
-        cout << "The length is : " << count;
-        
-    }
+        ~DoublyLL(){
+            Node *current = head;
+            while(current != nullptr){
+                Node *temp = current -> next;
+                delete current;
+                current = temp;
+            }
+            head = tail = nullptr;
+        }
 
+        void listSize(){
+            Node *temp = head;
+            int counter = 0;
+            while(temp != nullptr){
+                counter++;
+                temp = temp->next;
+            }
+            cout << "The length is : " << counter;
+        }
 
-    void append(int val){
-        Node* temp = new Node(val);
-        if(!head){
-            head = tail = temp;
-        } else{
+        void append(int val){
+            Node *temp = new Node(val);
+            if(!head){
+                head = tail = temp;
+            } else {
                 tail->next = temp;
                 temp->prev = tail;
                 tail = temp;
+            }
         }
-    }
 
-    void printLinkedList(){
-        Node* temp = head;
-        if(!head){
-            return;
-        } else{
-            while(temp!= nullptr){
-            cout << temp->data << " ";
-            temp = temp->next;
+        void printLL(){
+            Node *temp = head;
+            if(!head){
+                return;
+            } else {
+                while(temp != nullptr){
+                    cout << temp->val << " ";
+                    temp = temp->next;
+                }
+            }
+            cout << endl;
         }
-        cout << endl;
-        }
-    }
 };
 
 int main(){
-    doublyLinkedList db;
-    db.append(10);
-    db.append(20);
-    db.append(30);
-    db.printLinkedList();
-    db.listSize();
+    DoublyLL dd;
+    dd.append(10);
+    dd.append(20);
+    dd.append(30);
+    dd.printLL();
+    dd.listSize();
+
 return 0;
 }

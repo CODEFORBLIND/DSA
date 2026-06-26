@@ -67,20 +67,6 @@ public:
         }
     }
 
-    // void searchelem(int val){
-    //     Node* temp = head;
-    //     while(temp != nullptr){
-    //         if(temp->data == val){
-    //             cout << "Present";
-    //             return;
-    //         } else{
-    //             temp = temp->next;  
-    //         }
-    //     }
-    //     cout << "Not present";
-    // }
-
-
     void searchElem(int val){
         Node *temp = head;
         while(temp != nullptr){

@@ -75,36 +75,34 @@ public:
         }
     }
 
-    void deletelast(){
-        Node* temp = tail;
+    void deleteLast(){
+        Node *temp = tail;
         if(!head){
             return;
-        } else if(listSize() == 1){
+        } if(head->next == nullptr){
             delete head;
             head = tail = nullptr;
-            return;
-        } else{
+        } else {
             tail = tail->prev;
             tail->next = nullptr;
             delete temp;
         }
     }
 
-    void deletefirst(){
-        Node* temp = head;
+    void deleteFirst(){
+        Node *temp = head;
         if(!head){
             return;
-        } else if(listSize() == 1){
+        } 
+        if(head -> next == nullptr){
             delete head;
             head = tail = nullptr;
-            return;
-        } else{
+        } else {
             head = head->next;
             head->prev = nullptr;
             delete temp;
         }
     }
-
 
     void printLinkedList(){
         Node* temp = head;
@@ -126,9 +124,9 @@ int main(){
     db.append(20);
     db.append(30);
     db.printLinkedList();
-    // db.listSize();
-    // db.deletelast();
-    db.deletefirst();
+    db.listSize();
+    // db.deleteLast();
+    db.deleteFirst();
     db.printLinkedList();
 
 return 0;

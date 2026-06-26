@@ -8,12 +8,12 @@ class LinkedList{
                 int data;
                 Node *next;
 
-                int Node(int value){
+                Node(int value){
                     data = value;
                     next = nullptr;
                 }
 
-                int Node(int value, Node *next1){
+                Node(int value, Node *next1){
                     data = value;
                     next = next1;
                 }
