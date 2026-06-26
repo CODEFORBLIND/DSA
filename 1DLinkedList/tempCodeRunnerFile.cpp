@@ -1,2 +1,3 @@
-    list.append(20);
-    list.append(30);
+    // list.deleteFirst();
+    // cout << "List after deletion of first element: " << endl;
+    // list.printLinkedList();

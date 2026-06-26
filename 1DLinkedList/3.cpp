@@ -194,9 +194,12 @@ class linkedList{
             Node *temp = head;
             if(!head){
                 return;
-            } else if(listSize == 1){
+            } 
+            if(head -> next == nullptr){
+                delete head;
                 head = tail = nullptr;
-            } else {
+            } 
+            else {
                 head = head -> next;
                 delete temp;
             }
@@ -214,7 +217,8 @@ class linkedList{
                 while(temp->next->next != nullptr){
                     temp = temp -> next;
                 }
-            
+            delete temp->next;
+            temp->next = nullptr;
         }
 
         void printLinkedList(){
@@ -234,5 +238,11 @@ int main(){
     list.append(20);
     list.append(30);
     list.printLinkedList();
+    list.deleteLast();
+    cout << "List after deletion of last element: " << endl;
+    list.printLinkedList();
+    // list.deleteFirst();
+    // cout << "List after deletion of first element: " << endl;
+    // list.printLinkedList();
 return 0;
 }
