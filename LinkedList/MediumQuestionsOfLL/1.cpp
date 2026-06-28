@@ -23,6 +23,7 @@ class linkedList{
 
             Node(int value){
                 data = value;
+                next = nullptr;
             }
 
             Node(int value, Node* next1){
@@ -43,7 +44,7 @@ class linkedList{
             while(head){
                 temp = head;
                 head = head -> next;
-                delete head;
+                delete temp;
             }
         }
 
@@ -57,6 +58,7 @@ class linkedList{
             }
         }
 
+        // Method 1 : Brute-force Method
         void midElem(){
             Node *temp = head;
             int count = 0;
@@ -74,6 +76,21 @@ class linkedList{
             }
             cout << temp->data << endl;
         }
+
+        // Method 2 : Tortoise and Hare Approach
+        void midelem(){
+            if(head == nullptr){
+                return;
+            }
+            Node *slow = head;
+            Node *fast = head;
+            while(fast != nullptr && fast->next != nullptr){
+                slow = slow->next;
+                fast = fast->next->next;
+            }
+            cout << slow->data << endl;
+        }
+
 
         void printLinkedList(){
             Node *temp = head;
@@ -96,12 +113,6 @@ int main(){
     list.append(60);
     list.append(70);
     list.printLinkedList();
-    list.midElem();
-    // list.deleteLast();
-    // cout << "List after deletion of last element: " << endl;
-    // list.printLinkedList();
-    // // list.deleteFirst();
-    // // cout << "List after deletion of first element: " << endl;
-    // // list.printLinkedList();
+    list.midelem();
 return 0;
 }

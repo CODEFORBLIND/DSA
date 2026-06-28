@@ -39,7 +39,7 @@ class linkedList{
             while(head){
                 temp = head;
                 head = head -> next;
-                delete head;
+                delete temp;
             }
         }
 
