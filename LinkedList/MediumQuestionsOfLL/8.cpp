@@ -57,28 +57,6 @@ class linkedList{
             }
         }
 
-        // Method 1
-        // Add a simple boolean flag (bool visited) to each node
-        void detectCycle(){
-            Node *temp = head;
-            while(temp != nullptr){
-                if(temp->visited){
-                    cout << "Cycle Found!" << endl;
-                    cout << "Cycle is at starting position: " << temp->data << endl;
-                    int counter = 1;
-                    Node *runner = temp->next;
-                    while(runner != temp){
-                        counter++;
-                        runner = runner->next;
-                    }
-                    cout << "Length of the loop is: " << counter << endl;  
-                    return;
-                }
-                temp->visited = true;
-                temp = temp->next;
-            }
-            cout << "Cycle not found!" << endl;
-        }
 
         void printLinkedList(){
             Node *temp = head;
