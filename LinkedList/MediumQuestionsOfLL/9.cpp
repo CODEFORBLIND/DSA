@@ -77,11 +77,7 @@ int main(){
     list.append(60);
     list.append(70);
     list.printLinkedList();
-    // Making a cycle
-    linkedList::Node* node30 = list.head->next->next;
-    list.tail->next = node30;
-    list.detectCycle();
-    list.tail->next = nullptr;
+
 
 return 0;
 }
