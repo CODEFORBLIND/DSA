@@ -77,7 +77,5 @@ int main(){
     list.append(60);
     list.append(70);
     list.printLinkedList();
-
-
 return 0;
 }
