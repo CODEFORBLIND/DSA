@@ -87,16 +87,6 @@ class linkedList{
 };
 
 int main(){
-    linkedList list;
-    cout << "Original List " << endl;
-    list.append(1);
-    list.append(1);
-    list.append(2);
-    list.append(1);
-    list.append(1);
-
-    list.printLinkedList();
-    list.midelem();
 
 return 0;
 }
