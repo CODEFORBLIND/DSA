@@ -4,7 +4,6 @@
 
 // A palindrome is a sequence that reads the same forward and backwards.
 
-// Examples
 // Example 1:
 // Input: head -> 3 -> 7 -> 5 -> 7 -> 3
 // Output: true
