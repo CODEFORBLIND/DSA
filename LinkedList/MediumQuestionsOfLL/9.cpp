@@ -7,3 +7,9 @@
 // Output: 5->2
 // Explanation: The 2nd node from the end of the linked list is 1. Therefore, we get this result after removing 1 from the linked list.
 
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    
+return 0;
+}
